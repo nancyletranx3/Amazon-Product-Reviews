@@ -1,37 +1,124 @@
-## Welcome to GitHub Pages
+# Amazon Arts and Crafts Product Reviews Project
+Use Natural Language Processing to identify categories for Amazon Arts and Crafts reviews
 
-You can use the [editor on GitHub](https://github.com/nancyletranx3/az_project/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Why Natural Language Processing?
+The purpose of this project is to classify the reviews into one or more defined categories (positive, negative, or neutral) using the best model with the best accuracy score and classification report.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## How will this help us?
+If we sell products from many different parties, we need to figure out how our products are doing to see if we could make our products better. We could scrape and compile the reviews from the 3rd party resellers. With this model, we could see which reviews are positive, negative, or neutral. We can use natural language processing to tell which product lines are doing well or bad. With the products that are doing well, we could market those products more and we can spend more time refining them and developing them. With the products that are not doing so well, we could spend some time to see what common words customers said about the products and use that to improve our products. 
 
-### Markdown
+## Connecting Mongo DB to Python
+Here we have data in Mongo DB and we want to connect the data to Python.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![image](https://user-images.githubusercontent.com/62524529/126499621-d59f3426-dc2b-4976-a98b-d02fdae13a5a.png)
 
-```markdown
-Syntax highlighted code block
+We import the necessary libraries on Python. We connect python to MOngoDB using pymongo. Then we create a connection to the database using MongoClient. Finally, we pass the collection name to the database and turn it into a dataframe.
 
-# Header 1
-## Header 2
-### Header 3
+## Data Preprocessing
+**Data**
+ - Removing items that have less than 100 reviews
+ - Removing reviews that have FALSE in the verified column because reviews were not verified
+ - Removing all rows with NA values in reviewText column (our most important column for analysis)
+ - Replacing 4 and 5 in overall text with "Positive", replacing 3 with "Neutral", and replacing 1 and 2 with "Negative"
+ - Removing all the columns except for overall column (target) and reviewText (analysis)
+ - Add two calculated columns: Number of words (length) and number of punctuations (punct)
 
-- Bulleted
-- List
+**Reviews**
+- Removing any blank reviews 
+- Removing non-word reviews (symbols or numbers)
+- Removing any item that has less than 100 reviews since it won’t help us with the analysis
+- Cleaning the reviews text by eliminating stop words 
+- Removing punctuations 
+- Lowercase all words
+- Transform our text into numerical information for the computer to understand
 
-1. Numbered
-2. List
+![image](https://user-images.githubusercontent.com/62524529/126501110-cedd20ac-661c-45b0-b9a5-f5c45fa8a491.png)
 
-**Bold** and _Italic_ and `Code` text
+## Data Visualizations
+**Bar Chart of Overall Rating**
+![image](https://user-images.githubusercontent.com/62524529/126501869-b7c2b0be-efc4-48bd-8407-0e23ef0e64bf.png)
 
-[Link](url) and ![Image](src)
-```
+This bar graph shows that there are more positive reviews than neutral and negative. It also shows that there's definitely an imbalanced classes with the overall rating variable.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**Histogram of Number of Words by Rating**
+![image](https://user-images.githubusercontent.com/62524529/126502022-1d0e14c6-ac75-47c9-8014-2fd5160cd661.png)
 
-### Jekyll Themes
+Since there's not that much difference between number of words (length) between the ratings, it might not be impactful to predictions.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nancyletranx3/az_project/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**Histogram of Number of Punctuations by Rating**
+![image](https://user-images.githubusercontent.com/62524529/126502129-ca74b5e6-1f2d-4014-97b0-f1ef25f243c2.png)
 
-### Support or Contact
+This histogram shows the positive reviews will have less number of punctuations compared to the neutral and negative reviews.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**Scatterplot of Number of Words vs Number of Punctuations**
+![image](https://user-images.githubusercontent.com/62524529/126502238-97b1e141-b206-4b58-80ce-66d91ad32723.png)
+
+There is a positive correlation between the number of words and number of punctuations. If we are writing a long review with lots of sentences, there will be lots of punctuations.
+
+**Word Cloud**
+![image](https://user-images.githubusercontent.com/62524529/126502765-e7214de1-7511-4530-b26b-b4d36f597b20.png)
+
+Notice that bought and mom is the most frequent words. Out of all these words in the word cloud, we could assume the most frequent words are more on the positive side.
+
+## Partition the Data
+![image](https://user-images.githubusercontent.com/62524529/126503007-302cd6c8-661c-48a8-addf-16af9a7f6125.png)
+
+We are creating a sample of 90% for training data and 10% for the test data. Since we already know there’s an imbalanced data between the classes, it is best to use a small test sample size. 
+
+## Model Building
+**The classifier that works best with TFIDF vectorizer was LinearSVC.**
+![image](https://user-images.githubusercontent.com/62524529/126504209-525f8706-ba3f-4fe7-8122-d7f112f53639.png)
+
+- TFIDF vectorizer helps downscale weights for the words that occur in many documents
+- Although it has a high accuracy, the data between the classes are imbalanced.
+- The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives
+
+**Using a combination of GridSearchCV, CountVectorizer, and LinearSVC**
+![image](https://user-images.githubusercontent.com/62524529/126504350-310cfd27-ad77-4b77-b695-c402021c4e41.png)
+
+- GridSearchCV is a function that loops through predefined parameters and fit the model to the training set. Can select best parameters
+- Count Vectorizer builds a dictionary of features and transforms documents to feature vectors
+- Has a higher recall score for positive but lower for neutral and negative which is not what we want
+
+**Using a combination of TFIDF vectorizer, Linear SVC, and SMOTE**
+![image](https://user-images.githubusercontent.com/62524529/126504961-bb7ba9f8-2e5c-4422-b6da-39f35842ed3e.png)
+
+- SMOTE is used for oversampling where we oversample the minority class (neutral) which involves duplicating examples in the minority class
+- Our recall scores improved, but low accuracy
+
+**Using a combination of TFIDF vectorizer, Linear SVC, and RandomUnderSampler**
+![image](https://user-images.githubusercontent.com/62524529/126509216-c504ed7c-1b68-402d-b2ec-44cbf8d2c3c2.png)
+
+- Set the sampling strategy to not minority meaning it will resample all classes except for the minority class (neutral)
+- The recall scores in the classification report improved and is more balanced between the classes
+
+**Adding ngram_range**
+![image](https://user-images.githubusercontent.com/62524529/126509430-794f54b5-a6d5-418d-a02f-aa559abe175a.png)
+
+- Set the ngram_range to (1,5), which means combination of 5 words (ex: cheese spicy jalapeno flavored snack)
+- Accuracy score improved and the recall scores improved
+- This is the model we want to use for deployment
+
+## Next Steps:
+To improve the accuracy score even more, we could manually look through some reviews to manually add any additional stop words that could help improve our model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

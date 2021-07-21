@@ -70,7 +70,7 @@ Notice that "bought" and "mom" is the most frequent words. Out of all these word
 We are creating a sample of 90% for training data and 10% for the test data. Since we already know there’s an imbalanced data between the classes, it is best to use a small test sample size. 
 
 ## Model Building
-**The classifier that works best with TFIDF vectorizer was LinearSVC.**
+### The classifier that works best with TFIDF vectorizer was LinearSVC.
 
 ![image](https://user-images.githubusercontent.com/62524529/126504209-525f8706-ba3f-4fe7-8122-d7f112f53639.png)
 
@@ -78,7 +78,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 - Although it has a high accuracy, the data between the classes are imbalanced
 - The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives
 
-**Using a combination of GridSearchCV, CountVectorizer, and LinearSVC**
+### Using a combination of GridSearchCV, CountVectorizer, and LinearSVC
 
 ![image](https://user-images.githubusercontent.com/62524529/126504350-310cfd27-ad77-4b77-b695-c402021c4e41.png)
 
@@ -86,21 +86,21 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 - Count Vectorizer transforms the text into a vector on the basis of the frequency, or count, of each word that occurs in the entire text
 - Has a higher recall score for positive but lower for neutral and negative which is not what we want
 
-**Using a combination of TFIDF vectorizer, Linear SVC, and SMOTE**
+### Using a combination of TFIDF vectorizer, Linear SVC, and SMOTE
 
 ![image](https://user-images.githubusercontent.com/62524529/126504961-bb7ba9f8-2e5c-4422-b6da-39f35842ed3e.png)
 
 - SMOTE is used for oversampling where we oversample the minority class (neutral) which involves duplicating examples in the minority class
 - Our recall scores improved, but low accuracy
 
-**Using a combination of TFIDF vectorizer, Linear SVC, and RandomUnderSampler**
+### Using a combination of TFIDF vectorizer, Linear SVC, and RandomUnderSampler
 
 ![image](https://user-images.githubusercontent.com/62524529/126509216-c504ed7c-1b68-402d-b2ec-44cbf8d2c3c2.png)
 
 - Set the sampling strategy to not minority meaning it will resample all classes except for the minority class (neutral)
 - The recall scores in the classification report improved and is more balanced between the classes
 
-**Adding ngram_range**
+### Adding ngram_range
 
 ![image](https://user-images.githubusercontent.com/62524529/126509430-794f54b5-a6d5-418d-a02f-aa559abe175a.png)
 

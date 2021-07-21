@@ -34,31 +34,31 @@ We import the necessary libraries on Python. We connect python to MongoDB using 
 ![image](https://user-images.githubusercontent.com/62524529/126501110-cedd20ac-661c-45b0-b9a5-f5c45fa8a491.png)
 
 ## Data Visualizations
-**Bar Chart of Overall Rating**
+<p align="center">**Bar Chart of Overall Rating**</p>
 
 ![image](https://user-images.githubusercontent.com/62524529/126501869-b7c2b0be-efc4-48bd-8407-0e23ef0e64bf.png)
 
 This bar graph shows that there are more positive reviews than neutral and negative. It also shows that there's definitely an imbalanced classes with the overall rating variable.
 
-**Histogram of Number of Words by Rating**
+<p align="center">**Histogram of Number of Words by Rating**</p>
 
 ![image](https://user-images.githubusercontent.com/62524529/126502022-1d0e14c6-ac75-47c9-8014-2fd5160cd661.png)
 
 There is not that much difference between number of words (length) between the ratings.
 
-**Histogram of Number of Punctuations by Rating**
+<p align="center">**Histogram of Number of Punctuations by Rating**</p>
 
 ![image](https://user-images.githubusercontent.com/62524529/126502129-ca74b5e6-1f2d-4014-97b0-f1ef25f243c2.png)
 
 This histogram shows the positive reviews will have less number of punctuations compared to the neutral and negative reviews.
 
-**Scatterplot of Number of Words vs Number of Punctuations**
+<p align="center">**Scatterplot of Number of Words vs Number of Punctuations**</p>
 
 ![image](https://user-images.githubusercontent.com/62524529/126502238-97b1e141-b206-4b58-80ce-66d91ad32723.png)
 
 There is a positive correlation between the number of words and number of punctuations. If we are writing a long review with lots of sentences, there will be lots of punctuations.
 
-**Word Cloud**
+<p align="center">**Word Cloud**</p>
 
 ![image](https://user-images.githubusercontent.com/62524529/126502765-e7214de1-7511-4530-b26b-b4d36f597b20.png)
 

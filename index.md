@@ -7,7 +7,7 @@ If we sell products from many different parties, we need to figure out how our p
 ## Connecting Mongo DB to Python
 Here we have data in Mongo DB and we want to connect the data to Python.
 
-![image](https://user-images.githubusercontent.com/62524529/126499621-d59f3426-dc2b-4976-a98b-d02fdae13a5a.png)
+![image](https://user-images.githubusercontent.com/62524529/126516357-ae719392-cc52-4ef4-a9fb-7c4182335305.png)
 
 We import the necessary libraries on Python. We connect python to MongoDB using pymongo library. Then we create a connection to the database using MongoClient. Finally, we pass the collection name to the database and turn it into a dataframe.
 

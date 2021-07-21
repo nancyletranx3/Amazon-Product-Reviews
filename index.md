@@ -11,6 +11,8 @@ Here we have data in Mongo DB and we want to connect the data to Python.
 
 We import the necessary libraries on Python. We connect python to MongoDB using pymongo library. Then we create a connection to the database using MongoClient. Finally, we pass the collection name to the database and turn it into a dataframe.
 
+![image](https://user-images.githubusercontent.com/62524529/126516498-60bb4521-a3c1-40b8-bfc6-09d3fd031076.png)
+
 ## Data Preprocessing
 **Data**
  - Removing items that have less than 100 reviews

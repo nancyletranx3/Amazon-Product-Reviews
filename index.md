@@ -15,7 +15,7 @@ We import the necessary libraries on Python. We connect python to MongoDB using 
 
 ## Data Preprocessing
 **Data**
- - Removing items that have less than 100 reviews
+ - Removing items that have less than 100 reviews because items that have at least 100 reviews are more impactful
  - Removing reviews that have FALSE in the verified column because reviews were not verified
  - Removing all rows with NA values in reviewText column (our most important column for analysis)
  - Replacing 4 and 5 in overall text with "Positive", replacing 3 with "Neutral", and replacing 1 and 2 with "Negative"
@@ -25,7 +25,6 @@ We import the necessary libraries on Python. We connect python to MongoDB using 
 **Reviews**
 - Removing any blank reviews 
 - Removing non-word reviews (symbols or numbers)
-- Removing any item that has less than 100 reviews since it won’t help us with the analysis
 - Cleaning the reviews text by eliminating stop words 
 - Removing punctuations 
 - Lowercase all words
@@ -44,13 +43,13 @@ This bar graph shows that there are more positive reviews than neutral and negat
 
 ![image](https://user-images.githubusercontent.com/62524529/126502022-1d0e14c6-ac75-47c9-8014-2fd5160cd661.png)
 
-There is not that much difference between number of words (length) between the ratings.
+This histogram shows that there is not that much difference in number of words (length) between the ratings.
 
 ### Histogram of Number of Punctuations by Rating
 
 ![image](https://user-images.githubusercontent.com/62524529/126502129-ca74b5e6-1f2d-4014-97b0-f1ef25f243c2.png)
 
-This histogram shows the positive reviews will have less number of punctuations compared to the neutral and negative reviews.
+This histogram shows the positive reviews will have less number of punctuations compared to the neutral and negative reviews. 
 
 ### Scatterplot of Number of Words vs Number of Punctuations
 
@@ -62,7 +61,7 @@ There is a positive correlation between the number of words and number of punctu
 
 ![image](https://user-images.githubusercontent.com/62524529/126502765-e7214de1-7511-4530-b26b-b4d36f597b20.png)
 
-Notice that bought and mom is the most frequent words. Out of all these words in the word cloud, we could assume the most frequent words are more on the positive side.
+Notice that "bought" and "mom" is the most frequent words. Out of all these words in the word cloud, we could assume the most frequent words are more on the positive side.
 
 ## Partition the Data
 
@@ -76,7 +75,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 ![image](https://user-images.githubusercontent.com/62524529/126504209-525f8706-ba3f-4fe7-8122-d7f112f53639.png)
 
 - TFIDF vectorizer helps downscale weights for the words that occur in many documents
-- Although it has a high accuracy, the data between the classes are imbalanced.
+- Although it has a high accuracy, the data between the classes are imbalanced
 - The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives
 
 **Using a combination of GridSearchCV, CountVectorizer, and LinearSVC**
@@ -84,7 +83,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 ![image](https://user-images.githubusercontent.com/62524529/126504350-310cfd27-ad77-4b77-b695-c402021c4e41.png)
 
 - GridSearchCV is a function that loops through predefined parameters and fit the model to the training set. Can select best parameters
-- Count Vectorizer builds a dictionary of features and transforms documents to feature vectors
+- Count Vectorizer transforms the text into a vector on the basis of the frequency, or count, of each word that occurs in the entire text
 - Has a higher recall score for positive but lower for neutral and negative which is not what we want
 
 **Using a combination of TFIDF vectorizer, Linear SVC, and SMOTE**

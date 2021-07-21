@@ -44,7 +44,7 @@ This bar graph shows that there are more positive reviews than neutral and negat
 
 ![image](https://user-images.githubusercontent.com/62524529/126502022-1d0e14c6-ac75-47c9-8014-2fd5160cd661.png)
 
-Since there's not that much difference between number of words (length) between the ratings, it might not be impactful to predictions.
+There is not that much difference between number of words (length) between the ratings.
 
 **Histogram of Number of Punctuations by Rating**
 

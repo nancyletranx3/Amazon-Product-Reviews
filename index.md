@@ -78,14 +78,6 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 - Although it has a high accuracy, the data between the classes are imbalanced
 - The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives
 
-### Using a combination of GridSearchCV, CountVectorizer, and LinearSVC
-
-![image](https://user-images.githubusercontent.com/62524529/126504350-310cfd27-ad77-4b77-b695-c402021c4e41.png)
-
-- GridSearchCV is a function that loops through predefined parameters and fit the model to the training set. Can select best parameters
-- Count Vectorizer transforms the text into a vector on the basis of the frequency, or count, of each word that occurs in the entire text
-- Has a higher recall score for positive but lower for neutral and negative which is not what we want
-
 ### Using a combination of TFIDF vectorizer, Linear SVC, and SMOTE
 
 ![image](https://user-images.githubusercontent.com/62524529/126504961-bb7ba9f8-2e5c-4422-b6da-39f35842ed3e.png)

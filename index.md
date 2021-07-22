@@ -88,7 +88,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 ![image](https://user-images.githubusercontent.com/62524529/126509216-c504ed7c-1b68-402d-b2ec-44cbf8d2c3c2.png)
 
-- Set the sampling strategy to not minority meaning it will resample all classes except for the minority class (neutral)
+- Set the sampling strategy to **not minority** meaning it will resample all classes except for the minority class (neutral)
 - The recall scores in the classification report improved and is more balanced between the classes
 
 ### Adding ngram_range
@@ -97,7 +97,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 - Set the ngram_range to (1,5), which means combination of 5 words (ex: cheese spicy jalapeno flavored snack)
 - Accuracy score improved and the recall scores improved
-- This is the model we want to use for deployment
+- **This is the model we want to use for deployment**
 
 ## Build the chosen model using the whole dataset
 We will make predictions on the entire dataset based on the model we have chosen.

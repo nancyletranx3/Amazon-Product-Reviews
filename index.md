@@ -18,7 +18,7 @@ We connect python to MongoDB using pymongo library. Then we create a connection 
  - Removing items that have less than 100 reviews because items that have at least 100 reviews are more impactful
  - Removing reviews that have FALSE in the verified column because reviews were not verified
  - Removing all rows with NA values in reviewText column (our most important column for analysis)
- - Replacing 4 and 5 in overall text with "Positive", replacing 3 with "Neutral", and replacing 1 and 2 with "Negative"
+ - Replacing 4 and 5 in overall column with "Positive", replacing 3 with "Neutral", and replacing 1 and 2 with "Negative"
  - Removing all the columns except for overall column (target) and reviewText (analysis)
  - Add two calculated columns: Number of words (length) and number of punctuations (punct)
 

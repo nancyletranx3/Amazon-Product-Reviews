@@ -75,7 +75,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 - TFIDF vectorizer helps downscale weights for the words that occur in many documents
 - Although it has a high accuracy, the data between the classes are imbalanced
-- The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives
+- The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives (classes)
 
 ### Using a combination of TFIDF vectorizer, Linear SVC, and SMOTE
 
@@ -106,7 +106,7 @@ We will make predictions on the entire dataset based on the model we have chosen
 
 
 ## Next Steps:
-To improve the accuracy score even more, we could manually look through some reviews to manually add any additional stop words that could help improve our model. 
+To improve the accuracy score even more, we could look deeper into some reviews to manually add any additional stop words that could help improve our model. 
 
 
 

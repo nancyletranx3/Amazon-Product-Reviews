@@ -25,6 +25,7 @@ We connect python to MongoDB using pymongo library. Then we create a connection 
  - Add two calculated columns: Number of words (length) and number of punctuations (punct)
 
 **Reviews**
+- Removing HTML code artifacts
 - Removing any blank reviews 
 - Removing non-word reviews (symbols or numbers)
 - Cleaning the reviews text by eliminating stop words 

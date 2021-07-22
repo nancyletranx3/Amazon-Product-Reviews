@@ -27,7 +27,6 @@ We connect python to MongoDB using pymongo library. Then we create a connection 
 - Removing non-word reviews (symbols or numbers)
 - Cleaning the reviews text by eliminating stop words 
 - Removing punctuations 
-- Lowercase all words
 - Transform our text into numerical information for the computer to understand
 
 ![image](https://user-images.githubusercontent.com/62524529/126501110-cedd20ac-661c-45b0-b9a5-f5c45fa8a491.png)
@@ -100,8 +99,14 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 - Accuracy score improved and the recall scores improved
 - This is the model we want to use for deployment
 
+## Build the chosen model using the whole dataset
+We will make predictions on the entire dataset based on the model we have chosen.
+
+![image](https://user-images.githubusercontent.com/62524529/126666531-380a99f8-aa8a-49b5-af8c-d9f9366ab23b.png)
+
+
 ## Next Steps:
-To improve the accuracy score even more, we could manually look through some reviews to manually add any additional stop words that could help improve our model.
+To improve the accuracy score even more, we could manually look through some reviews to manually add any additional stop words that could help improve our model. 
 
 
 

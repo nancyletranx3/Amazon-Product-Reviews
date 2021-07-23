@@ -22,7 +22,7 @@ We connect python to MongoDB using pymongo library. Then we create a connection 
  - Removing all rows with NA values in reviewText column (our most important column for analysis)
  - Replacing 4 and 5 in overall column with "Positive", replacing 3 with "Neutral", and replacing 1 and 2 with "Negative"
  - Removing all the columns except for overall column (target) and reviewText (analysis)
- - Add two calculated columns: Number of words (length) and number of punctuations (punct)
+ - Add two calculated columns: Number of words (length) and number of punctuations (punct) to see if it's useful for predictions
 
 **Reviews**
 - Removing HTML code artifacts

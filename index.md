@@ -4,7 +4,12 @@ The purpose of this project is to classify the reviews into one or more defined 
 ![image](https://user-images.githubusercontent.com/62524529/126676540-acfeaefc-61d9-439c-a61a-85356e3961c0.png)
 
 ## How will this help us?
-If we sell products from many different parties, we need to figure out how our products are doing to see if we could make our products better. We could scrape and compile the reviews from the 3rd party resellers. With this model, we could see which reviews are positive, negative, or neutral. We can use natural language processing to tell which product lines are doing well or bad. With the products that are doing well, we could market those products more and we can spend more time refining them and developing them. With the products that are not doing so well, we could spend some time to see what common words customers said about the products and use that to improve our products. 
+- If we sell products from many different parties, we need to figure out how our products are doing to see if we could make our products better
+- Could scrape and compile the reviews from the 3rd party resellers 
+- With this model, we could see which reviews are positive, negative, or neutral 
+- Use natural language processing to tell which product lines are doing well or bad 
+- With the products that are doing well, we could market those products more and we can spend more time refining them and developing them
+- With the products that are not doing so well, we could spend some time to see what common words customers said about the products and use that to improve our products 
 
 ## Connecting Mongo DB to Python
 Here we have data in Mongo DB and we want to connect the data to Python.

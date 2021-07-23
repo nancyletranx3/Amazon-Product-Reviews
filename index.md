@@ -114,7 +114,7 @@ We will make predictions on the entire dataset using the model we have chosen.
 
 
 ## Next Steps:
-To improve the accuracy score even more, we could look deeper into some reviews to manually add any additional stop words that could help improve our model. 
+To improve the accuracy score even more, we could look deeper into some reviews to manually add any additional stop words that could help improve our model. If possible, figure out a way to combine GridsearchCV, TFIDF Vectorizer, LinearSVC, and Random Under Sampler.
 
 
 

@@ -103,7 +103,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 - **This is the model we want to use for deployment**
 
 ## Build the chosen model using the whole dataset
-We will make predictions on the entire dataset based on the model we have chosen.
+We will make predictions on the entire dataset using the model we have chosen.
 
 ![image](https://user-images.githubusercontent.com/62524529/126666531-380a99f8-aa8a-49b5-af8c-d9f9366ab23b.png)
 

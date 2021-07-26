@@ -112,7 +112,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 ## Build the chosen model using the whole dataset
 We will make predictions on the entire dataset using the model we have chosen.
 
-![image](https://user-images.githubusercontent.com/62524529/126666531-380a99f8-aa8a-49b5-af8c-d9f9366ab23b.png)
+![image](https://user-images.githubusercontent.com/62524529/127019551-ac7cf0c1-115f-4b3f-8169-980bf9905fd0.png)
 
 
 ## Next Steps:

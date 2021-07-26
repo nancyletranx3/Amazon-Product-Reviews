@@ -82,7 +82,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 ## Model Building
 ### The classifier that works best with TFIDF vectorizer was LinearSVC.
 
-![image](https://user-images.githubusercontent.com/62524529/126504209-525f8706-ba3f-4fe7-8122-d7f112f53639.png)
+![image](https://user-images.githubusercontent.com/62524529/127047309-d0d0f915-b8e2-4a8d-9348-bf6331fe9ea9.png)
 
 - Although it has a high accuracy, the data between the classes are imbalanced
 - The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives (classes)

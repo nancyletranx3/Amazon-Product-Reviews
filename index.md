@@ -33,9 +33,12 @@ We connect python to MongoDB using pymongo library. Then we create a connection 
 - Removing HTML code artifacts
 - Removing any blank reviews 
 - Removing non-word reviews (symbols or numbers)
+
+**Using TFIDF Vectorizer**
 - Cleaning the reviews text by eliminating stop words 
 - Removing punctuations 
 - Transform our text into numerical information for the computer to understand
+- Helps downscale weights for the words that occur in many documents
 
 ![image](https://user-images.githubusercontent.com/62524529/126501110-cedd20ac-661c-45b0-b9a5-f5c45fa8a491.png)
 
@@ -81,7 +84,6 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 ![image](https://user-images.githubusercontent.com/62524529/126504209-525f8706-ba3f-4fe7-8122-d7f112f53639.png)
 
-- TFIDF vectorizer helps downscale weights for the words that occur in many documents
 - Although it has a high accuracy, the data between the classes are imbalanced
 - The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives (classes)
 
@@ -101,9 +103,9 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 ### Adding ngram_range
 
-![image](https://user-images.githubusercontent.com/62524529/126509430-794f54b5-a6d5-418d-a02f-aa559abe175a.png)
+![image](https://user-images.githubusercontent.com/62524529/127016826-b1830011-263b-4be7-b7af-20b9a77b1707.png)
 
-- Set the ngram_range to (1,5), which means combination of 5 words (ex: cheese spicy jalapeno flavored snack)
+- Set the ngram_range to (1,2), which means combination of 2 words (ex: cheesy potatoes)
 - Accuracy score improved and the recall scores improved
 - **This is the model we want to use for deployment**
 

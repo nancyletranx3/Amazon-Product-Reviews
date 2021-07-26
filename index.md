@@ -103,7 +103,7 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 ### Adding ngram_range
 
-![image](https://user-images.githubusercontent.com/62524529/127016826-b1830011-263b-4be7-b7af-20b9a77b1707.png)
+![image](https://user-images.githubusercontent.com/62524529/127018414-95b1f6aa-14d2-4668-b2cd-12f4784b1ba8.png)
 
 - Set the ngram_range to (1,2), which means combination of 2 words (ex: cheesy potatoes)
 - Accuracy score improved and the recall scores improved

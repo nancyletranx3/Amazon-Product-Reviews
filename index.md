@@ -12,11 +12,13 @@ The purpose of this project is to classify the reviews into one or more defined 
 - With the products that are not doing so well, we could spend some time to see what common words customers said about the products and use that to improve our products 
 
 ## Connecting Mongo DB to Python
-Here we have data in Mongo DB and we want to connect the data to Python.
+Here I have data in Mongo DB and I want to connect the data to Python.
 
 ![image](https://user-images.githubusercontent.com/62524529/126516357-ae719392-cc52-4ef4-a9fb-7c4182335305.png)
 
-We connect python to MongoDB using pymongo library. Then we create a connection to the database using MongoClient. Finally, we pass the collection name to the database and turn it into a dataframe.
+- Connected python to MongoDB using pymongo library 
+- Created a connection to the database using MongoClient
+- Passed the collection name to the database and turn it into a dataframe
 
 ![image](https://user-images.githubusercontent.com/62524529/126516498-60bb4521-a3c1-40b8-bfc6-09d3fd031076.png)
 
@@ -71,13 +73,13 @@ There is a positive correlation between the number of words and number of punctu
 
 ![image](https://user-images.githubusercontent.com/62524529/126502765-e7214de1-7511-4530-b26b-b4d36f597b20.png)
 
-Notice that "bought" and "mom" is the most frequent words. Out of all these words in the word cloud, we could assume the most frequent words are more on the positive side.
+Notice that "bought" and "mom" is the most frequent words. Out of all these words in the word cloud, I assumed the most frequent words are more on the positive side.
 
 ## Partition the Data
 
 ![image](https://user-images.githubusercontent.com/62524529/126503007-302cd6c8-661c-48a8-addf-16af9a7f6125.png)
 
-We are creating a sample of 90% for training data and 10% for the test data. Since we already know there’s an imbalanced data between the classes, it is best to use a small test sample size. 
+I am creating a sample of 90% for training data and 10% for the test data. Since I already know there’s an imbalanced data between the classes, it is best to use a small test sample size. 
 
 ## Model Building
 ### The classifier that works best with TFIDF vectorizer was LinearSVC.
@@ -91,13 +93,14 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 
 ![image](https://user-images.githubusercontent.com/62524529/126504961-bb7ba9f8-2e5c-4422-b6da-39f35842ed3e.png)
 
-- SMOTE is used for oversampling where we oversample the minority class (neutral) which involves duplicating examples in the minority class
+- Using SMOTE will help with oversampling by duplicating examples in the minority class (neutral)
 - Our recall scores improved, but low accuracy
 
 ### Using a combination of TFIDF vectorizer, Linear SVC, and RandomUnderSampler
 
 ![image](https://user-images.githubusercontent.com/62524529/126509216-c504ed7c-1b68-402d-b2ec-44cbf8d2c3c2.png)
 
+- Using RandomUnderSampler will help with imbalanced classes by deleting examples from the majority class (positive)
 - Set the sampling strategy to **not minority** meaning it will resample all classes except for the minority class (neutral)
 - The recall scores in the classification report improved and is more balanced between the classes
 
@@ -110,13 +113,13 @@ We are creating a sample of 90% for training data and 10% for the test data. Sin
 - **This is the model we want to use for deployment**
 
 ## Build the chosen model using the whole dataset
-We will make predictions on the entire dataset using the model we have chosen.
+I made predictions on the entire dataset using the model I have chosen.
 
 ![image](https://user-images.githubusercontent.com/62524529/127019551-ac7cf0c1-115f-4b3f-8169-980bf9905fd0.png)
 
 
 ## Next Steps:
-To improve the accuracy score even more, we could look deeper into some reviews to manually add any additional stop words that could help improve our model.
+To improve the accuracy score even more, I could look deeper into some reviews to manually add any additional stop words that could help improve my model.
 
 
 

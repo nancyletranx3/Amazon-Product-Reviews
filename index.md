@@ -38,7 +38,7 @@ We connect python to MongoDB using pymongo library. Then we create a connection 
 - Cleaning the reviews text by eliminating stop words 
 - Removing punctuations 
 - Transform our text into numerical information for the computer to understand
-- Helps downscale weights for the words that occur in many documents
+- Helps downscale weights for the words that occur in many documents (reviews)
 
 ![image](https://user-images.githubusercontent.com/62524529/126501110-cedd20ac-661c-45b0-b9a5-f5c45fa8a491.png)
 

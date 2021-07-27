@@ -16,7 +16,7 @@ Here I have data in Mongo DB and I want to connect the data to Python.
 
 ![image](https://user-images.githubusercontent.com/62524529/126516357-ae719392-cc52-4ef4-a9fb-7c4182335305.png)
 
-- Connected python to MongoDB using pymongo library 
+- Connected MongoDB to Python using pymongo library 
 - Created a connection to the database using MongoClient
 - Passed the collection name to the database and turn it into a dataframe
 

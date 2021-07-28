@@ -11,6 +11,10 @@ The purpose of this project is to classify the reviews into one or more defined 
 - With the products that are doing well, we could market those products more and we can spend more time refining them and developing them
 - With the products that are not doing so well, we could spend some time to see what common words customers said about the products and use that to improve our products 
 
+## Things to Consider
+- Natural Language Preprocessing doesn't read sarcasm
+- Some customers may confuse 1 star reviews with 5 star reviews and vice versa
+
 ## Connecting Mongo DB to Python
 Here I have data in Mongo DB and I want to connect the data to Python.
 
@@ -62,12 +66,6 @@ This histogram shows that there is not that much difference in number of words (
 ![image](https://user-images.githubusercontent.com/62524529/126502129-ca74b5e6-1f2d-4014-97b0-f1ef25f243c2.png)
 
 This histogram shows the positive reviews will have less number of punctuations compared to the neutral and negative reviews. 
-
-### Scatterplot of Number of Words vs Number of Punctuations
-
-![image](https://user-images.githubusercontent.com/62524529/126502238-97b1e141-b206-4b58-80ce-66d91ad32723.png)
-
-There is a positive correlation between the number of words and number of punctuations. If we are writing a long review with lots of sentences, there will be lots of punctuations.
 
 ### Word Cloud
 

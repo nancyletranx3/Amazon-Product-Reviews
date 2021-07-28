@@ -119,7 +119,7 @@ I made predictions on the entire dataset using the model I have chosen.
 
 
 ## Next Steps:
-To improve the accuracy score even more, I could look deeper into some reviews to manually add any additional stop words that could help improve my model.
+To improve the accuracy score even more, I could look deeper into some reviews to manually add any additional stop words that could help improve my model. Also, remove any sarcastic reviews, good reviews that show up as 1 star, and bad reviews that show up as 5 star.
 
 
 

@@ -82,7 +82,7 @@ I am creating a sample of 90% for training data and 10% for the test data. Since
 ## Model Building
 ### The classifier that works best with TFIDF vectorizer was LinearSVC.
 
-![image](https://user-images.githubusercontent.com/62524529/128053692-b6615330-08da-4785-b131-e301b6b8783f.png)
+![image](https://user-images.githubusercontent.com/62524529/128054460-0702f228-1526-4b24-88ab-bf7662520679.png)
 
 - Although it has a high accuracy, the data between the classes are imbalanced
 - The recall score of positive is really high compared to neutral and negative. Want recall scores to be higher because it correctly identifies the true positives (classes)
@@ -96,7 +96,7 @@ I am creating a sample of 90% for training data and 10% for the test data. Since
 
 ### Using a combination of TFIDF vectorizer, Linear SVC, and RandomUnderSampler
 
-![image](https://user-images.githubusercontent.com/62524529/128053820-207ec2be-90a4-4ee6-b5be-a60047c03cfd.png)
+![image](https://user-images.githubusercontent.com/62524529/128054687-03950529-6d21-40ab-957b-e88639c687da.png)
 
 - Using RandomUnderSampler will help with imbalanced classes by deleting examples from the majority class (positive)
 - Set the sampling strategy to **not minority** meaning it will resample all classes except for the minority class (neutral)
@@ -104,7 +104,7 @@ I am creating a sample of 90% for training data and 10% for the test data. Since
 
 ### Adding ngram_range
 
-![image](https://user-images.githubusercontent.com/62524529/128053878-11bba973-1554-4e2c-a1fa-808c85b163db.png)
+![image](https://user-images.githubusercontent.com/62524529/128054785-22bee520-8bc2-4b96-b0b5-88d699e1777d.png)
 
 - Set the ngram_range to (1,3), which means combination of 2 words (ex: cheesy jalapeno potatoes)
 - Accuracy score improved and the recall scores improved
